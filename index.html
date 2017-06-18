@@ -1,86 +1,139 @@
- 
+
+
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Sienna's Website</title>
+  <title>zombie frogs</title>
   <script src="processing.min.js"></script>
   
+  <!-- HTML Codes by Quackit.com -->
+<audio src="funnysong.mp3" autoplay="autoplay"  loop="loop" id="MusicPlayer">
+<embed src="funnysong.mp3" autoplay="true" width="450" height="300" name="MusicPlayer" id="MusicPlayer">
+</audio>
+
 </head>
 <body>
- 
-  
-<h1 style="text-align: center;"><span style="color:#008080;">Sienna&#39;s Website</span></h1>
+  <body bgcolor="#66FFB2">
+  <p style="text-align: center;"><span style="font-size:24px;"><span style="font-family:courier new,courier,monospace;"><span style="color:#FF0000;">ZOMBIE-FROGS</span></span></span></p>
 
-<p style="text-align: center;">This is Sienna&#39;s website!!!!</p>
-
-
- 
   <canvas id="canvas"></canvas>
   <script>
     var canvas = document.getElementById("canvas");
     var processing = new Processing(canvas, function(processing) {
         processing.size(1250, 500);
         processing.background(0xFFF);
- 
+
         var mouseIsPressed = false;
         processing.mousePressed = function () { mouseIsPressed = true; };
         processing.mouseReleased = function () { mouseIsPressed = false; };
- 
+
         var keyIsPressed = false;
         processing.keyPressed = function () { keyIsPressed = true; };
         processing.keyReleased = function () { keyIsPressed = false; };
- 
+
         function getImage(s) {
             var url = "https://www.kasandbox.org/programming-images/" + s + ".png";
             processing.externals.sketch.imageCache.add(url);
             return processing.loadImage(url);
         }
- 
+
         // use degrees rather than radians in rotate function
         var rotateFn = processing.rotate;
         processing.rotate = function (angle) {
             rotateFn(processing.radians(angle));
         };
- 
+
         with (processing) {
 
-         noStroke();
-var leftX = 165;
-var rightX = 200;
-var sunRadius = 100;
+  
+var x = 1;
+var y = 600;
+var a = 1;
+var b = 1;
+var mouthSize1 = 1; 
+var mouthSize2 = 100; 
+var bgColor = 1;  
 
+  
+          
 draw = function() {
-    background(184, 236, 255);
     
-    fill(255, 170, 0);
-    ellipse(200, 100, sunRadius, sunRadius);
-    
-    // clouds 
-    fill(255, 255, 255);
-    // left cloud
-    ellipse(leftX, 150, 126, 97);
-    ellipse(leftX+62, 150, 70, 60);
-    ellipse(leftX-62, 150, 70, 60);
-    
-    // right cloud
-    ellipse(rightX, 100, 126, 97);
-    ellipse(rightX+62, 100, 70, 60);
-    ellipse(rightX-62, 100, 70, 60);
-    
-    leftX--;
-    rightX++;
-    sunRadius += 2;
-    
-};
+    // all lines of code inside here will be run repeatedly
+background(72, 249, 219); 
+  
+var position = 335;
+textSize(16);
+fill(0, 0, 0);
+text("._q0p_.", 825, position);
+text(" '=(_)='", 825, position + 15);
+text("   / V \\ ", 824, position + 30);
+text(" (_/^\\_)", 825, position + 42);
+  
+textSize(16);
+fill(0, 0, 0);
+text("._q0p_.", mouseX, mouseY);
+text(" '=(_)='", mouseX, mouseY + 15);
+text("   / V \\ ", mouseX - 1, mouseY + 30);
+text(" (_/^\\_)", mouseX, mouseY + 42);
+  
+noStroke();
+fill(109, 77, 151); // purple
 
- 
+ellipse(x, y, 200, 100); // face
+ellipse(x - 50, y - 50, 40, 40); // left eye socket
+ellipse(x + 50, y - 50, 40, 40); // right eye socket
+
+fill(235, 96, 101); // for the whites (red) of the eyes!
+ellipse(x - 50, y - 50, 30, 30); // left eyeball
+ellipse(x + 50, y - 50, 30, 30); // right eyeball
+
+fill(0, 0, 0); // black 
+ellipse(x, y, 100, mouthSize1); // mouth
+
+rect(x - 50, y - 50, 10, 10); // left pupil
+rect(x + 50, y - 50, 10, 10); // right pupil
+  
+    x = x + 2;
+    y = y - 0.85;
+    mouthSize1 = mouthSize1 + 0.13;
+  
+noStroke();
+fill(153, 76, 0); // a nice froggy brown!
+
+ellipse(a, b, 200, 100); // face
+ellipse(a - 50, b - 50, 40, 40); // left eye socket
+ellipse(a + 50, b - 50, 40, 40); // right eye socket
+
+fill(235, 96, 101); // for the whites (red) of the eyes!
+ellipse(a - 50, b - 50, 30, 30); // left eyeball
+ellipse(a + 50, b - 50, 30, 30); // right eyeball
+
+fill(0, 0, 0); // black 
+ellipse(a, b, 100, mouthSize2); // mouth
+
+rect(a - 50, b - 50, 10, 10); // left pupil
+rect(a + 50, b - 50, 10, 10); // right puil
+  
+    a = a + 1.8;
+    b = b + 1.5; 
+    mouthSize2 = mouthSize2 - 0.2;
+  
+    bgColor = bgColor + 0.5;
+  
 };
         }
         if (typeof draw !== 'undefined') processing.draw = draw;
     });
   </script>
- 
+  <p style="text-align: center;">&nbsp;</p>
+
+<p style="text-align: center;">&nbsp;</p>
+
+<p style="text-align: center;">&nbsp;</p>
+
+<p style="text-align: center;">&nbsp;</p>
+    <p style="text-align: center;"><span style="font-size:12px;">Music: <a href="http://www.bensound.com" target="_blank">http://www.bensound.com</a></span></p>
+
 </body>
 </html>
- 
- 
+

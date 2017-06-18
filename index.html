@@ -1,0 +1,80 @@
+ 
+<!DOCTYPE html>
+<html>
+<head>
+  <title>zombie frogs</title>
+  <script src="processing.min.js"></script>
+  
+</head>
+<body>
+ 
+  <canvas id="canvas"></canvas>
+  <script>
+    var canvas = document.getElementById("canvas");
+    var processing = new Processing(canvas, function(processing) {
+        processing.size(1250, 500);
+        processing.background(0xFFF);
+ 
+        var mouseIsPressed = false;
+        processing.mousePressed = function () { mouseIsPressed = true; };
+        processing.mouseReleased = function () { mouseIsPressed = false; };
+ 
+        var keyIsPressed = false;
+        processing.keyPressed = function () { keyIsPressed = true; };
+        processing.keyReleased = function () { keyIsPressed = false; };
+ 
+        function getImage(s) {
+            var url = "https://www.kasandbox.org/programming-images/" + s + ".png";
+            processing.externals.sketch.imageCache.add(url);
+            return processing.loadImage(url);
+        }
+ 
+        // use degrees rather than radians in rotate function
+        var rotateFn = processing.rotate;
+        processing.rotate = function (angle) {
+            rotateFn(processing.radians(angle));
+        };
+ 
+        with (processing) {
+ 
+noStroke();
+var leftX = 165;
+var rightX = 200;
+var sunRadius = 100;
+ 
+draw = function() {
+    background(184, 236, 255);
+    
+    fill(255, 170, 0);
+    ellipse(200, 100, sunRadius, sunRadius);
+    
+    // clouds 
+    fill(255, 255, 255);
+    // left cloud
+    ellipse(leftX, 150, 126, 97);
+    ellipse(leftX+62, 150, 70, 60);
+    ellipse(leftX-62, 150, 70, 60);
+    
+    // right cloud
+    ellipse(rightX, 100, 126, 97);
+    ellipse(rightX+62, 100, 70, 60);
+    ellipse(rightX-62, 100, 70, 60);
+    
+    leftX--;
+    rightX++;
+    sunRadius += 2;
+    
+};
+ 
+ 
+  
+};
+        }
+        if (typeof draw !== 'undefined') processing.draw = draw;
+    });
+  </script>
+ 
+</body>
+</html>
+ 
+ 

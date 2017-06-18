@@ -42,21 +42,31 @@
         };
 
         with (processing) {
+          
+// Sienna, your program starts HERE ------------------------------------------------------------------------
+// Sienna, your program starts HERE ------------------------------------------------------------------------
+// Sienna, your program starts HERE ------------------------------------------------------------------------
+// Sienna, your program starts HERE ------------------------------------------------------------------------
+// Sienna, your program starts HERE ------------------------------------------------------------------------          
+// Sienna, your program starts HERE ------------------------------------------------------------------------          
+// Sienna, your program starts HERE ------------------------------------------------------------------------          
+// Sienna, your program starts HERE ------------------------------------------------------------------------          
 
 noStroke();
-var leftX = 565;
-var rightX = 700;
-var sunRadius = 100;
+var leftX = 565;  // starting place of left cloud
+var rightX = 700; // starting place of right cloud
+var sunRadius = 100; // starting size of the sun
 
 draw = function() {
-    background(0, 0, 0);
+    background(0, 0, 0); // color of the SKY
     
     // this is the sun!!
-    fill(208, 51, 255);
-    ellipse(600, 100, sunRadius, sunRadius);
+    fill(208, 51, 255); // color of the SUN
+    ellipse(600, 100, sunRadius, sunRadius); // first 2 numbers are the starting place of the sun
     
     // clouds 
-    fill(90, 255, 0);
+    fill(90, 255, 0); // color of the CLOUDS
+  
     // left cloud
     ellipse(leftX, 150, 126, 97);
     ellipse(leftX+62, 150, 70, 60);
@@ -67,9 +77,11 @@ draw = function() {
     ellipse(rightX+62, 100, 70, 60);
     ellipse(rightX-62, 100, 70, 60);
     
-    leftX = leftX - 0.5;
-    rightX = rightX + 0.5;
-    sunRadius += 1;
+    leftX = leftX - 0.5; // This is how FAST the LEFT CLOUD moves.
+  
+    rightX = rightX + 0.5; // This is how FAST the RIGHT CLOUD moves.
+  
+    sunRadius += 0.1; // This is how FAST the SUN grows.
     
 };
 
@@ -77,14 +89,6 @@ draw = function() {
         if (typeof draw !== 'undefined') processing.draw = draw;
     });
   </script>
-  <p style="text-align: center;">&nbsp;</p>
-
-<p style="text-align: center;">&nbsp;</p>
-
-<p style="text-align: center;">&nbsp;</p>
-
-<p style="text-align: center;">&nbsp;</p>
-    <p style="text-align: center;"><span style="font-size:12px;">Music: <a href="http://www.bensound.com" target="_blank">http://www.bensound.com</a></span></p>
 
 </body>
 </html>

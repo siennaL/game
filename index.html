@@ -67,8 +67,8 @@ draw = function() {
     ellipse(rightX+62, 100, 70, 60);
     ellipse(rightX-62, 100, 70, 60);
     
-    leftX--;
-    rightX++;
+    leftX = leftX - 0.5;
+    rightX = rightX + 0.5;
     sunRadius += 1;
     
 };
